@@ -1,0 +1,13 @@
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block content %}
+     <h1>Welcome, <h2>{{ user.username }}!</h2></h1>
+    {% if user.is_authenticated %}
+        <a href="{% url 'Trainingapp:logout' %}">logout</a>
+    {% else %}
+        <a href="{% url 'Trainingapp:login' %}">login</a>/<a href="{% url 'Trainingapp:register' %}">register</a>
+    {% endif %}
+{% endblock %}
